@@ -9,11 +9,12 @@
 from typing import Union
 
 import numpy as np
+from skbio.stats.distance import DissimilarityMatrix
 from skbio.embedding import ProteinEmbedding
 from skbio.embedding._utils import fill_score_matrix, embedding_local_similarity
 
 
-class SubstitutionMatrix:
+class EmbeddingSubstitionMatrix(DissimilarityMatrix):
     """
     The substitution matrix is constructed from residue-normalized embeddings for both proteins.
     This substitution matrix can be further used as an input for Needleman-Wunsch alignment
